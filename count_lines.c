@@ -38,34 +38,30 @@ void replace_all_blanks_by_one_blank()
 void replace_hidden_char()
 {
 	int c;
-	int backslah = '\\';
-	int t = 't';
-	int backspace = 'b';
 	while ((c = getchar()) != EOF)
 	{
 		if (c == '\t')
 		{
-			c = '\0';
-			putchar(backslah);
-			putchar(t);
+			putchar('\\');
+			putchar('t');
 		}
 		else if (c == '\b')
 		{
-			c = '\0';
-			putchar(backslah);
-			putchar(backspace);
+			putchar('\\');
+			putchar('b');
 		}
-		else if (c == backslah)
+		else if (c == '\\')
 		{
-			c = '\0';
 			putchar('\\');
 			putchar('\\');
 		}
-		putchar(c);
+		else
+			putchar(c);
 	}
 }
 
 int main()
 {
-	replace_hidden_char();
+//	replace_hidden_char();
+	printf("cou\bcou\n");
 }
