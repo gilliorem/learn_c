@@ -6,13 +6,15 @@ int main()
 
 {
 	int c;
-	printf("%d\n", EOF);
+	int result;
 
-	while (c != EOF)
+	while (1)
 	{
-		putchar(c);
 		c = getchar();
-	}
+		result = (c != EOF);
+		putchar(c);
+		printf("%d \n", result);
 
+	}
 	return 0;
 }
